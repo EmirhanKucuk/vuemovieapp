@@ -8,7 +8,9 @@
         <v-toolbar-title class="font-weight-medium mr-10 red--text"
           >Mahirflix</v-toolbar-title
         >
-        <v-btn to="/" class="font-weight-regular ml-2 elevation-0">Movies</v-btn>
+        <v-btn to="/" class="font-weight-regular ml-2 elevation-0"
+          >Movies</v-btn
+        >
         <v-btn to="/favorites" class="font-weight-regular ml-2 elevation-0"
           >Favorites</v-btn
         >
@@ -48,14 +50,28 @@
             <v-icon> mdi-bell </v-icon>
           </v-badge>
         </v-btn>
-        <v-btn
-          to="/favorites"
-          icon
-          color="gray"
-          class="elevation-0 ml-2 mr-2"
-        >
+        <v-btn to="/favorites" icon color="gray" class="elevation-0 ml-2 mr-2">
           <v-icon color="red">mdi-heart</v-icon>
         </v-btn>
+
+        <v-menu left bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-avatar
+              v-on="on"
+              v-bind="attrs"
+              color="primary"
+              size="32"
+            >
+              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"
+            /></v-avatar>
+          </template>
+
+          <v-list>
+            <v-list-item @click="logOut">
+              <v-list-item-title >logout</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </v-app-bar>
     </nav>
     <v-dialog v-model="cardDialog.show" width="300">
@@ -81,6 +97,11 @@ export default {
     this.getMovies();
   },
   methods: {
+    logOut(){
+      //window.location.reload();
+      this.$router.push({name:'login'})
+      
+    },
     btnClickEvent() {
       this.movieSearchText = "";
     },

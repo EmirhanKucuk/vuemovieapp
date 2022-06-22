@@ -1,10 +1,12 @@
 <template>
   <v-app>
-    <NavBarVue/>
+    <NavBarVue />
+
     <v-main>
       <router-view />
     </v-main>
-    <FooterVue/>
+
+    <FooterVue />
   </v-app>
 </template>
 
@@ -17,8 +19,5 @@ export default {
     NavBarVue,
     FooterVue,
   },
-  data: () => ({
-    //
-  }),
 };
 </script>
