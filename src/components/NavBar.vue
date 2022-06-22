@@ -8,7 +8,7 @@
         <v-toolbar-title class="font-weight-medium mr-10 red--text"
           >Mahirflix</v-toolbar-title
         >
-        <v-btn to="/" class="font-weight-regular ml-2 elevation-0"
+        <v-btn to="/home" class="font-weight-regular ml-2 elevation-0"
           >Movies</v-btn
         >
         <v-btn to="/favorites" class="font-weight-regular ml-2 elevation-0"

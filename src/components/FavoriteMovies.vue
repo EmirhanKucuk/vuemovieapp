@@ -30,6 +30,7 @@ export default {
     ...mapState(["favorites"]),
     ...mapGetters(["getFavoriteMovies"]),
   },
+  
   methods: {
     getGenres() {
       // eslint-disable-next-line no-unused-vars

@@ -11,9 +11,12 @@ const getters = {
   getFavoriteMovies() {
     return state.favorites;
   },
-  getPasswordInfo(){
-    return state.password
-  }
+  getPasswordInfo() {
+    return state.password;
+  },
+  getEmailInfo() {
+    return state.username;
+  },
 };
 const mutations = {
   addFavoriteMovie(state, movie) {
@@ -24,9 +27,9 @@ const mutations = {
       element.id !== movie.id;
     });
   },
-  updatePassword(state,inputPassword){
+  updatePassword(state, inputPassword) {
     state.password = inputPassword;
-  }
+  },
 };
 const actions = {
   updateFavoriteMovies({ commit }, movie) {
@@ -35,9 +38,9 @@ const actions = {
   updateDeletedFavoriteMovie({ commit }, movie) {
     commit("deleteFavoriteMovie", movie);
   },
-  updatePasswordAction({commit},password){
-    commit('updatePassword',password);
-  }
+  updatePasswordAction({ commit }, password) {
+    commit("updatePassword", password);
+  },
 };
 
 const store = new Vuex.Store({
